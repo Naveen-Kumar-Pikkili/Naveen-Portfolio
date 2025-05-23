@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     try {
-      const response = await fetch('https://q2f33rcjk6.execute-api.eu-north-1.amazonaws.com/Dev/contact', {
+      const response = await fetch('https://w6ujeq0i08.execute-api.us-east-1.amazonaws.com/Dev/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-fetch('https://q2f33rcjk6.execute-api.eu-north-1.amazonaws.com/Dev/track', {
+fetch('https://w6ujeq0i08.execute-api.us-east-1.amazonaws.com/Dev/track', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
