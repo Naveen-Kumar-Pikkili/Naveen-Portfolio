@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Naveen-Kumar-Pikkili/Naveen-Portfolio.git'  // your Git repo URL
+                git branch: 'main', url: 'https://github.com/Naveen-Kumar-Pikkili/Naveen-Portfolio.git'  // your Git repo URL
             }
         }
         stage('Deploy Frontend to S3') {
