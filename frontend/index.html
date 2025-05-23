@@ -319,35 +319,34 @@
 
     
 
-    <section class="down-box" id="contact">
-        <div class="contactSkills">
-            <div class="contact-info">
-                <div class="main-text">
-                    <h2 class="heading">Contact Me</h2>
-                    <span>get in touch with me</span>
-                </div>
-                <form action="#">
-                    <div class="input-box">
-                        <input type="text" placeholder="First Name">
-                        <input type="text" placeholder="Last Name">
-                    </div>
-                    <input type="email" placeholder="Email">
-                    <input type="text" placeholder="Subject">
-                    <textarea name="#" id="" cols="30" rows="10">
-                    </textarea>
-                    <div class="formBtn">
-                        <button type="submit" class="btn">Send Message</button>
-                    </div>
-                </form>
-            </div>
-            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+ <section class="down-box" id="contactSection">
+  <div class="contactSkills">
+    <div class="contact-info">
+      <div class="main-text">
+        <h2 class="heading">Contact Me</h2>
+        <span>Get in touch with me</span>
+      </div>
+      <form id="contactForm">
+        <div class="input-row">
+          <input type="text" name="name" placeholder="Full Name" required />
+          <input type="tel" name="mobile" placeholder="Mobile Number" required />
         </div>
-    </section>
+        <div class="input-row">
+          <input type="email" name="email" placeholder="Email Address" required />
+        </div>
+        <div class="input-row">
+          <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        </div>
+        <div class="formBtn">
+          <button type="submit" class="btn">Send Message</button>
+        </div>
+      </form>
+      <div id="responseMessage" style="display:none; margin-top:10px;"></div>
+    </div>
+  </div>
+</section>
+
+
 
   
 
@@ -399,7 +398,7 @@
   </div>
 </section>
 
-
+<div id="popup"></div>
 
 
     <!-- scroll reveal  -->

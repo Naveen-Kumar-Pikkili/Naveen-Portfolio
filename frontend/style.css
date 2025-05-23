@@ -1447,6 +1447,75 @@ section.footer {
   }
 }
 
+#contact .contact-info {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.input-row input,
+.input-row textarea {
+  flex: 1 1 48%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+}
+
+.input-row textarea {
+  flex: 1 1 100%;
+}
+
+.formBtn {
+  text-align: center;
+}
+
+.btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+/* Your existing CSS here... */
+
+/* Popup styles */
+#popup {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#popup.hide {
+  opacity: 0;
+  pointer-events: none;
+}
 
 
 

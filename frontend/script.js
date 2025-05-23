@@ -188,4 +188,75 @@ ScrollReveal().reveal('.allServices,.portfolio-gallery,.blog-box,footer,.img-her
 // e.g., this type of scroll-based active class handling
 ScrollReveal().reveal('[data-sr="fade-up"]', { origin: 'top' });
 
+// Popup function with fade effect
+function showPopup(message) {
+  const popup = document.getElementById('popup');
+  popup.textContent = message;
+  popup.style.display = 'block';
+  popup.classList.remove('hide');
+
+  setTimeout(() => {
+    popup.classList.add('hide');
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 500);
+  }, 3000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('contactForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const responseMessage = document.getElementById('responseMessage');
+
+    const data = {
+      name: form.name.value.trim(),
+      mobile: form.mobile.value.trim(),
+      email: form.email.value.trim(),
+      message: form.message.value.trim()
+    };
+
+    try {
+      const response = await fetch('https://q2f33rcjk6.execute-api.eu-north-1.amazonaws.com/Dev/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        showPopup('Your message has been sent successfully!');
+        form.reset();
+        responseMessage.style.display = 'none';
+      } else {
+        responseMessage.textContent = 'Failed to send message: ' + (result.error || 'Please try again.');
+        responseMessage.style.color = 'red';
+        responseMessage.style.display = 'block';
+      }
+    } catch (err) {
+      responseMessage.textContent = 'Error sending message. Please check your internet connection.';
+      responseMessage.style.color = 'red';
+      responseMessage.style.display = 'block';
+      console.error(err);
+    }
+  });
+});
+
+
+fetch('https://q2f33rcjk6.execute-api.eu-north-1.amazonaws.com/Dev/track', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    page: window.location.pathname,
+    userAgent: navigator.userAgent
+  })
+});
+
+
 
