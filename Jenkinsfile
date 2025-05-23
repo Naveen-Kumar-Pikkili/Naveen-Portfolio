@@ -16,7 +16,7 @@ pipeline {
                     $class: 'AmazonWebServicesCredentialsBinding',
                     credentialsId: 'aws-credentials'
                 ]]) {
-                    sh "aws s3 sync frontend/ s3://${S3_BUCKET} --delete"
+                    sh "aws s3 sync frontend/ s3://naveenkumarportfolio --delete"
                 }
             }
         }
